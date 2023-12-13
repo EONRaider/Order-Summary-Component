@@ -40,3 +40,5 @@ A simple project using HTML5 and CSS3 that displays an order summary component c
 - Cube CSS methodology
 
 ### What I learned
+- I've increased my familiarity with CSS Flexbox.
+- I was able to navigate pretty easily through the miriad small changes that the responsive mobile version of this project required. Using Cube CSS to structure my styling definitely payed off when it came to this.
