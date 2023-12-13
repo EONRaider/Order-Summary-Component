@@ -15,9 +15,11 @@ html {
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd {
-  margin-block-end: 0;
+body,
+h1,
+h2,
+p {
+  margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -29,19 +31,6 @@ ol[role='list'] {
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  line-height: 1.5;
-}
-
-/* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
-  line-height: 1.1;
-}
-
-/* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
-  text-wrap: balance;
 }
 
 /* A elements that don't have a class get default styles */
@@ -50,16 +39,11 @@ a:not([class]) {
   color: currentColor;
 }
 
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
 /* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
@@ -74,3 +58,249 @@ textarea:not([rows]) {
 }
 
 /* === END CSS RESET === */
+
+/* COMPOSITION */
+body {
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.card {
+  width: 450px;
+  height: 697px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 48px 48px 48px;
+}
+
+.card-description > * + * {
+  margin-top: 17px;
+}
+
+.card-pricing {
+  margin-top: 20px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.card-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* UTILITIES */
+:root {
+  --white: #ffffff;
+  --pale-blue-1: #e0e8ff;
+  --pale-blue-2: #f7f9ff;
+  --pale-blue-3: #717fa6;
+  --pale-blue-4: #766cf1;
+  --vivid-blue-1: #382ae1;
+  --dark-blue-1: #1f2e55;
+}
+
+.bg-primary {
+  background-color: var(--pale-blue-1);
+}
+
+.bg-secondary {
+  background-color: var(--white);
+}
+
+.bg-light {
+  background-color: var(--pale-blue-2);
+}
+
+.bg-vivid {
+  background-color: var(--vivid-blue-1);
+}
+
+.card-pricing-left-block-plan-info > * + * {
+  margin-top: 6px;
+}
+
+.card-buttons > * + * {
+  margin-top: 32px;
+}
+
+/* BLOCK */
+.card__image {
+  display: block;
+}
+
+.card__title {
+  color: var(--dark-blue-1);
+  font-size: 28px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.card__text {
+  color: var(--pale-blue-3);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.card-pricing-blocks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 24px;
+  border-radius: 11px;
+}
+
+.card-pricing-left-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-pricing-left-block-plan-info {
+  margin-left: 20px;
+}
+
+.card-pricing__plan-name {
+  color: var(--dark-blue-1);
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.card-pricing__plan-value {
+  color: var(--pale-blue-3);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card-pricing__plan-change {
+  color: var(--vivid-blue-1);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration-line: underline;
+}
+
+.card-buttons > * {
+  font-size: 15px;
+  font-weight: 900;
+  width: 100%;
+  border: none;
+}
+
+.card-buttons__payment {
+  color: var(--white);
+  height: 50px;
+  border-radius: 11px;
+  box-shadow: 0px 20px 20px 0px rgba(56, 42, 225, 0.19);
+}
+
+.card-buttons__cancel {
+  color: var(--pale-blue-3);
+}
+
+/* EXCEPTIONS */
+@media (width <= 375px) {
+  body {
+    /* Mobile background pattern */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='375' height='194'%3E%3Cpath fill='%23D6E1FF' fill-rule='evenodd' d='M-131.808 155.366c97.026 51.512 204.233 51.512 321.62 0 117.388-51.512 223.27-51.512 317.648 0V0h-639.268v155.366z'/%3E%3C/svg%3E");
+  }
+
+  .card {
+    width: 327px;
+    height: 567px;
+  }
+
+  .card__image {
+    width: 327px;
+    height: 160px;
+  }
+
+  .card-content-container {
+    padding: 32px 24px;
+  }
+
+  .card-description {
+    width: 263px;
+  }
+
+  .card-description > * + * {
+    margin-top: 16px;
+  }
+
+  .card__title {
+    font-size: 22px;
+  }
+
+  .card__text {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .card-pricing {
+    margin-top: 24px;
+  }
+
+  .card-pricing-blocks {
+    padding: 17px 16px 16px 16px;
+  }
+
+  .card-pricing__plan-name {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .card-pricing__plan-value {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  .card-pricing__plan-change {
+    font-size: 13px;
+  }
+
+  .card-buttons {
+    margin-top: 24px;
+  }
+
+  .card-buttons > * + * {
+    margin-top: 24px;
+  }
+}
+
+@media (width > 375px) {
+  body {
+    /* Desktop background pattern */
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="437"><path fill="%23D6E1FF" fill-rule="evenodd" d="M0 349.974c218.558 116.035 460.05 116.035 724.475 0s502.933-116.035 715.525 0V0H0v349.974z"/></svg>');
+    background-size: 100% auto;
+  }
+}
+
+.card-pricing__plan-change:hover {
+  color: var(--pale-blue-4);
+  cursor: pointer;
+}
+
+.card-buttons__payment:hover {
+  background-color: var(--pale-blue-4);
+  cursor: pointer;
+}
+
+.card-buttons__cancel:hover {
+  color: var(--dark-blue-1);
+  cursor: pointer;
+}
