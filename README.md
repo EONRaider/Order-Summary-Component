@@ -20,9 +20,11 @@ A simple project using HTML5 and CSS3 that displays an order summary component c
 
 ### Screenshot
 
+![Order Summary Component](https://github.com/EONRaider/Order-Summary-Component/assets/15611424/f9dcdd5d-4eb4-46c8-9a60-e5df96d8a090)
+
 ### Links
 
-- [My Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/project-name)
+- [My Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/responsive-html5css3-order-summary-component-iKzlUfkjQl)
 - [Check the Live Site](https://eonraider-order-summary-component.netlify.app/)
 
 ## My process
