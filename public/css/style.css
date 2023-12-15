@@ -53,7 +53,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 45px 48px 48px 48px;
+  padding: 45px 48px 48px;
 }
 
 .card-description > * + * {
@@ -229,7 +229,7 @@ body {
   }
 
   .card-pricing-blocks {
-    padding: 17px 16px 16px 16px;
+    padding: 17px 16px 16px;
   }
 
   .card-pricing__plan-name {
